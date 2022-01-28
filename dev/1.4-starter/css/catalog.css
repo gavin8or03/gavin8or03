@@ -1,0 +1,160 @@
+/*
+ * Colors
+ */
+
+:root {
+ /* 
+  * Color Theme Swatches
+  */
+ --primary-highlight: #003566;
+ --primary-shade: #000814;
+ --base: #47A3FF;
+ --white: #EBF5FF;
+ --secondary-highlight: #FFD60A;
+ --secondary-shade: #FFC300;
+
+ --font-family: interstate, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*
+ * Base Styles
+ */
+
+body {
+    background-color: var(--primary-shade);
+    color: var(--white);
+    font-family: var(--font-family);
+}
+
+body > div { 
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    padding: 0 5vw;
+    margin: 0 auto;
+    max-width: 1200px;
+
+    font-weight: 400;
+    font-style: normal;
+}
+
+main {
+    width: 80vw;
+    max-width: 700px;
+}
+
+main ul,
+main ul li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+main li p {
+    background-color: var(--secondary-highlight);
+    color: var(--primary-shade);
+    display: block;
+    margin: 0 0 3ch 0;
+    padding: 2ch;
+}
+
+main li p a {
+    text-decoration: none;
+    color: var(--primary-shade);
+}
+
+figure {
+    width: 100%;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+header,
+footer {
+    width: 100%;
+}
+
+body > div > aside {
+    flex: 1;
+    padding-right: 6ch;
+}
+
+aside > ul > li {
+    margin-bottom: 2ch;
+}
+
+main header {
+    background-color: var(--secondary-highlight);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2% 5%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: var(--primary-shade);
+}
+
+/*
+ * Typography
+ */
+
+h1 {
+    font-family: circe,sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 1.25rem;
+
+    border-radius: 999px;
+
+    /* background-color: var(--secondary-highlight); */
+    color: var(--white);
+
+    display: inline-block;
+    padding: 1ch 3ch;
+    margin: 3ch 0;
+}
+
+h2 {
+    font-family: circe, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--primary-shade);
+}
+
+/*
+ * Interactions
+ */
+
+ button {
+     cursor: pointer;
+     background-color: var(--secondary-highlight);
+     font-size: 1.2rem;
+     border: none;
+     border-radius: 10px;
+     padding: 1ch 2ch;
+     border-bottom-width: 5px;
+     border-bottom-style: solid;
+     border-bottom-color: transparent;
+     border-top-width: 5px;
+     border-top-style: solid;
+     border-top-color: transparent;
+     -webkit-appearance: none;
+        -moz-appearance: none;
+             appearance: none;
+ }
+
+ button[aria-selected="true"] {
+    background-color: var(--secondary-highlight);
+ }
+
+ button:not([aria-selected="true"]):hover {
+    border-bottom-color: var(--primary-shade);
+};
