@@ -1,0 +1,100 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Tabs, JS, and ARIA</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="https://use.typekit.net/qep6gcw.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/tabbies.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body data-assignment="tabbies">
+  <div>
+    <header>
+      <h1 tabindex="0">The Tabbies</h1>
+      <p><a href="./index.html">Back To Main</a></p>
+    </header>
+    <main>
+      <div class="tabs">
+        <header>
+          <h2 tabindex="0"><strong>Smush</strong> The Tabs</h2>
+          <!-- 
+
+            role=<value>             : Tells ARIA and assistive technology what the expected behavior of this element is
+            aria-label=<value>       : Used by ARIA and assistive technologies to describe the element.
+            aria-labelledby=<value>  : Sets what the element is labeled by. This uses the id of the element.
+            aria-selected=<value>    : Tells ARIA and assistive technologies if the item is currently selected
+            aria-controls=<value>    : Tells ARIA and assistive technologies which element is impacted by the current. Targets the id of the element.
+            tabindex=<0 || -1>       : Tells the browser if the element should be reachable by the tab key.
+                                     : Note - If you set tabindex on a parent, you must set tabindex on its children elements to be reachable.
+
+          -->
+          <div role="tablist" aria-label="Tabbies" id="tablist" tabindex="0">
+            <button role="tab" aria-selected="true" aria-controls="bigboy-tab" id="bigboy">Big Boy</button>
+            <button role="tab" aria-selected="false" aria-controls="toast-tab" id="toast" tabindex="-1">Toasty Boy</button>
+            <button role="tab" aria-selected="false" aria-controls="warm-tab" id="warm" tabindex="-1">Sunny Boy</button>
+          </div>
+        </header>
+        <div aria-label="Panels" id="tabPanel">
+          <div tabindex="0" role="tabpanel" id="bigboy-tab" aria-labelledby="bigboy">
+            <figure>
+              <img src="./img/bigboy.png"
+                  alt="A Beautiful Boy">
+            </figure>
+          </div>
+    
+          <div tabindex="0" role="tabpanel" id="toast-tab" aria-labelledby="toast" hidden="">
+            <figure>
+              <img src="./img/toastedboy.jpg"
+                  alt="A Toast With The Most">
+            </figure>
+          </div>
+    
+          <div tabindex="0" role="tabpanel" id="warm-tab" aria-labelledby="warm" hidden="">
+            <figure>
+              <img src="./img/toastyboy.jpg"
+                  alt="A Warm Delight">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </main>
+    <aside>
+      <h3>Items Of Note:</h3>
+      <ul>
+        <li>There are no tab or tablist elements native to HTML</li>
+        <li>Tabs present an opportunity to learn about ARIA roles
+          <ul>
+            <li>Try using VoiceOver or Narrator to see this in action</li>
+          </ul>
+        </li>
+        <li>Keyboard left and right through the tabs</li>
+        <li>Use Enter or Space to select tabs</li>
+        <li>Use Tab to move between sections of the site</li>
+        <li>An image's <code>alt</code> text must be set for a screen reader to be able to describe it.</li>
+        <li><code>alt</code> text also helps with broken images!</li>
+        <li>It is best practice to use buttons for on page interactions that do not link to another page.</li>
+      </ul>
+    </aside>
+    <footer>
+      <h6>&copy; Full Sail University | Web Development | Application Development</h6>
+    </footer>
+  </div>
+
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

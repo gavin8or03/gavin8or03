@@ -1,0 +1,143 @@
+/*
+ * Colors
+ */
+
+:root {
+ /* 
+  * Color Theme Swatches
+  */
+ --pink-highlight: rgba(242, 79, 169, 1);
+ --pink-shade: rgba(216, 84, 207, 1);
+ --base: rgba(132, 82, 242, 1);
+ --white: rgb(238, 232, 251);
+ --yellow-highlight: rgba(242, 160, 7, 1);
+ --yellow-shade: rgba(191, 149, 99, 1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*
+ * Base Styles
+ */
+
+body {
+    background-color: var(--white);
+}
+
+body > div { 
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    padding: 0 5vw;
+    margin: 0 auto;
+    max-width: 1200px;
+
+    font-family: circe-rounded, sans-serif;
+    font-weight: 400;
+    
+    font-style: normal;
+}
+
+body > div > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    width: 80vw;
+    max-width: 700px;
+}
+
+figure {
+    width: 100%;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+header,
+footer {
+    width: 100%;
+}
+
+body > div > aside {
+    flex: 1;
+    padding-right: 6ch;
+}
+
+aside > ul > li {
+    margin-bottom: 2ch;
+}
+
+main header {
+    background-color: var(--base);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2% 5%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/*
+ * Typography
+ */
+
+h1 {
+    font-family: circe-rounded,sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 1.25rem;
+
+    border-radius: 999px;
+
+    background-color: var(--pink-highlight);
+    color: var(--white);
+
+    display: inline-block;
+    padding: 1ch 3ch;
+    margin: 3ch 0;
+}
+
+h2 {
+    font-family: circe-rounded, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--white);
+}
+
+/*
+ * Interactions
+ */
+
+ button {
+     cursor: pointer;
+     background-color: var(--pink-highlight);
+     font-size: 1.2rem;
+     border: none;
+     border-radius: 10px;
+     padding: 1ch 2ch;
+     border-bottom-width: 5px;
+     border-bottom-style: solid;
+     border-bottom-color: transparent;
+     border-top-width: 5px;
+     border-top-style: solid;
+     border-top-color: transparent;
+     -webkit-appearance: none;
+        -moz-appearance: none;
+             appearance: none;
+ }
+
+ button[aria-selected="true"] {
+    background-color: var(--yellow-highlight);
+ }
+
+ button:not([aria-selected="true"]):hover {
+    border-bottom-color: var(--pink-shade);
+};
